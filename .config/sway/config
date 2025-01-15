@@ -1,0 +1,42 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# styles - set the folder for your theme definition file
+set $theme /usr/share/sway/themes/catppuccin-mocha
+
+# theme variables
+include $theme/theme.conf
+
+# user theme variable can override the global theme
+include $HOME/.config/sway/definitions.d/theme.conf
+
+include $HOME/.config/sway/autostart
+
+# global variables
+include $HOME/.config/sway/definitions
+
+# user variables can override global definitions
+include $HOME/.config/sway/definitions.d/*.conf
+
+include /etc/sway/inputs/*
+
+# enable modes
+include $HOME/.config/sway/modes/*
+
+# only enable this if every app you use is compatible with wayland
+# xwayland disable
+
+# include additional configs e.g. to autostart applications
+# include /etc/sway/config.d/*
+
+# user config
+include $HOME/.config/sway/config.d/*
+
+# exec swayidle -w \\
+# timeout 900 'swaylock -f -c 000000' \\
+# timeout 1800 'swaymsg "output * power off"' \\
+# 	resume 'swaymsg "output * power on"' \\
+# before-sleep 'swaylock -f -c 000000'
