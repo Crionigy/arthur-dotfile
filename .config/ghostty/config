@@ -1,22 +1,25 @@
 # Theme
-# theme = catppuccin-mocha
-theme = vesper
+theme = catppuccin-mocha
+#theme = vesper
 background-opacity = 0.8
 background-blur-radius = 20
 
 confirm-close-surface = false
 
 # General Configs
+gtk-adwaita = true
+gtk-tabs-location = bottom
+gtk-wide-tabs = false
 window-new-tab-position = end
 window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 0
 window-decoration = false
 shell-integration = zsh
 desktop-notifications = true
 auto-update = check
 
 # Fonts
-font-family = "Hack Nerd Font Regular"
+font-family = "Hack Nerd Font"
 font-family-bold = "Hack Nerd Font Bold"
 font-family-italic = "Hack Nerd Font Italic"
 font-family-bold-italic = "Hack Nerd Font Bold Italic"
@@ -24,11 +27,14 @@ font-feature = -calt, -liga, -dlig
 
 # Cursor
 cursor-style = block
-cursor-opacity = 0.9
+cursor-opacity = 0.6
+cursor-invert-fg-bg = true
 
 # Keybinds
+keybind = ctrl+shift+n=unbind
 keybind = alt+shift+n=new_window
 
+keybind = alt+shift+p=toggle_tab_overview
 keybind = alt+p=toggle_split_zoom
 keybind = alt+q=close_surface
 
@@ -36,6 +42,8 @@ keybind = ctrl+shift+k=new_split:up
 keybind = ctrl+shift+j=new_split:down
 keybind = ctrl+shift+h=new_split:left
 keybind = ctrl+shift+l=new_split:right
+
+keybind = ctrl+shift+r=reload_config
 
 keybind = alt+k=goto_split:top
 keybind = alt+j=goto_split:bottom
@@ -63,3 +71,12 @@ keybind = super+alt+k=scroll_page_up
 keybind = super+alt+j=scroll_page_down
 keybind = super+alt+p=jump_to_prompt:-1
 keybind = super+alt+n=jump_to_prompt:1
+
+keybind = shift+up=adjust_selection:up
+keybind = shift+right=adjust_selection:right
+keybind = shift+down=adjust_selection:down
+keybind = shift+left=adjust_selection:left
+keybind = shift+home=adjust_selection:beginning_of_line
+keybind = ctrl+shift+home=adjust_selection:home
+keybind = ctrl+shift+end=adjust_selection:end
+

@@ -16,14 +16,13 @@
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
     "position": "top",
-
-    "modules-left": ["sway/workspaces", "custom/scratchpad", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["custom/playerctl", "custom/wf-recorder", "sway/mode"],
     "modules-right": [
         "custom/weather",
-        "custom/idle_inhibitor",
+        //"custom/idle_inhibitor",
         // informational
-        "custom/github",
+        //"custom/github",
         "custom/clipboard",
         "cpu",
         "memory",
@@ -32,20 +31,42 @@
         // connecting
         "network",
         "bluetooth",
-        "custom/valent",
+        //"custom/valent",
 
         // media
         "pulseaudio",
 
-        "custom/pacman",
+        "custom/update",
         "tray",
         //"sway/language",
-        "clock"
+        "clock",
+        "custom/notification"
     ],
 
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+    
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
 
     "battery": {
         "interval": 30,
@@ -118,13 +139,16 @@
         "window-rewrite": {
           "class<discord>": "󰙯  Discord",
           "class<firefox>": "  Firefox",
+          "class<zen>": "  Zen",
           "class<steam>": "󰓓  Steam",
           "class<obsidian>": "  Obsidian",
           "class<foot>": "󰽒  Foot",
           "class<com.mitchellh.ghostty>": "  Ghostty",
           "class<Spotify>": "  Spotify",
           "class<wasistlos>": "  WhatsApp",
-          "class<GitHub Desktop>": "   GitHub"
+          "class<GitHub Desktop>": "   GitHub",
+	  "class<net-runelite-client-RuneLite>": "Runelite",
+	  "class<Minecraft Launcher>": "Minecraft"
         }
     },
 
@@ -133,10 +157,9 @@
         "all-outputs": true,
         "icon": true,
         "icon-size": 20,
-        "max-length": 75,
+        "max-length": 30,
         "rewrite": {
-          "(.*) — Mozilla Firefox": "$1",
-          ".*vim.*": "  $0"
+          "(.*) — Mozilla Firefox": "$1"
         }
     },
 
@@ -182,14 +205,12 @@
         "spacing": 5
     },
 
-    "custom/pacman": {
+    "custom/update": {
         "format": "󰀼 {}",
-        "interval": 3600,
+        "interval": 1800,
         "return-type": "json",
         "exec-if": "/usr/share/sway/scripts/checkupdates.sh check",
         "exec": "/usr/share/sway/scripts/checkupdates.sh status",
-        "on-click": "/usr/share/sway/scripts/checkupdates.sh check && swaymsg exec \\$update_manager",
-        "on-click-middle": "waybar-signal pacman",
         "signal": 14
     },
 
@@ -264,13 +285,13 @@
     },
 
     "custom/playerctl": {
-        "interval": "once",
+        "interval": 5,
         "tooltip": true,
         "return-type": "json",
         "format": "{}",
         "format-icons": {
-            "Playing": "󰏦",
-            "Paused": "󰐍"
+            "Playing": "󰏦 ",
+            "Paused": "󰐍 "
         },
         "exec": "playerctl metadata --format '{ \"text\": \"{{emoji(status)}}  {{markup_escape(title)}} - {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}:  {{markup_escape(title)}} - {{markup_escape(artist)}}\" }'",
         "on-click": "playerctl play-pause",

@@ -1,5 +1,6 @@
 return {
   {
+    enabled = true,
     "catppuccin/nvim",
     name = "catppuccin",
     config = function()
@@ -32,8 +33,8 @@ return {
               background = true,
             },
           },
-        }
+        },
       })
-    end
-  }
+    end,
+  },
 }

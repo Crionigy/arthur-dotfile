@@ -164,9 +164,9 @@ $bindsym $mod+v splitv
 ## Action // Switch to window stacking ##
 $bindsym $mod+s layout stacking
 ## Action // Switch to window tabbing ##
-# $bindsym $mod+w layout tabbed
+$bindsym $mod+o layout tabbed
 ## Action // Switch to window tiling ##
-# $bindsym $mod+e layout toggle split
+$bindsym $mod+i layout toggle split
 
 ## Action // Toggle fullscreen ##
 $bindsym $mod+p fullscreen
@@ -210,5 +210,3 @@ $bindsym --release Escape [app_id="floating_shell" con_id=__focused__] kill
 ## Launch // Task Manager ##
 $bindsym Ctrl+Alt+Delete exec $task_manager
 
-## Launch // Emoji Picker ##
-$bindsym Alt+Shift+e exec $emoji_picker

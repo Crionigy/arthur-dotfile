@@ -1,6 +1,6 @@
 return function()
   local api = vim.api
-  local var = vim.fn.expand "<cword>"
+  local var = vim.fn.expand("<cword>")
   local buf = api.nvim_create_buf(false, true)
   local opts = { height = 1, style = "minimal", border = "single", row = 1, col = 1 }
 
@@ -15,7 +15,7 @@ return function()
 
   vim.bo[buf].buftype = "prompt"
   vim.fn.prompt_setprompt(buf, "")
-  vim.api.nvim_input "A"
+  vim.api.nvim_input("A")
 
   vim.keymap.set({ "i", "n" }, "<Esc>", "<cmd>q!<CR>", { buffer = buf })
 
