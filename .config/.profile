@@ -1,5 +1,8 @@
+
 #PATH
 export PATH="$HOME/.local/bin:$PATH"
+
+export ZDOTDIR="$HOME/.config/zsh"
 
 # Session
 export XDG_SESSION_TYPE=wayland
@@ -26,4 +29,3 @@ export vblank_mode=0
 #export ZVM_PATH=$XDG_DATA_HOME/zvm
 
 exec sway "$@"
-
