@@ -23,6 +23,7 @@ return {
       require("lspconfig").cssls.setup({ capabilities = capabilities })
       require("lspconfig").ts_ls.setup({ capabilities = capabilities })
       require("lspconfig").zls.setup({ capabilities = capabilities })
+      require("lspconfig").csharp_ls.setup({ capabilities = capabilities })
     end,
   },
 }
