@@ -53,7 +53,6 @@ tooltip {
   margin-right: 2px;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
   padding: 0 3px;
   margin: 0px 2px 0px 2px;
@@ -74,23 +73,18 @@ tooltip {
 
 #window,
 #clock,
-#battery,
+#gamemode,
 #cpu,
 #memory,
 #temperature,
-#backlight,
 #network,
 #bluetooth,
 #pulseaudio,
 #custom-clipboard,
-#custom-idle_inhibitor,
-#custom-disk,
 #custom-weather,
-#language,
 #tray,
 #mode,
 #custom-playerctl,
-#idle_inhibitor,
 #custom-update {
   padding: 0 2px;
   margin: 0 5px;
@@ -98,47 +92,12 @@ tooltip {
   border-top: 2px solid transparent;
 }
 
+#gamemode {
+  border-bottom: 3px solid #cdd6f4;
+}
+
 #clock {
   border-bottom: 3px solid #44475a;
-}
-
-#battery {
-  border-bottom: 3px solid #ffb52a;
-}
-
-#battery.charging {
-  /*border-bottom: 3px solid #51e258;*/
-  animation-name: blink;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes blink {
-  0% {
-    border-bottom: 3px solid transparent;
-  }
-  100% {
-    border-bottom: 3px solid #ffb52a;
-  }
-}
-
-@keyframes blinkLow {
-  from {
-    border-bottom: 3px solid transparent;
-  }
-  to {
-    border-bottom: 3px solid #ff6e67;
-  }
-}
-
-*#battery.critical:not(.charging) {
-  animation-name: blinkLow;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 #cpu {
@@ -149,8 +108,18 @@ tooltip {
   border-bottom: 3px solid #fab387;
 }
 
-#backlight {
-  border-bottom: 3px solid #90b1b1;
+#cpu.warning,
+#memory.warning {
+  color: #11111b;
+  background-color: #df8e1d;
+  border-bottom-color: #df8e1d;
+}
+
+#cpu.critical,
+#memory.critical {
+  color: #11111b;
+  background-color: #d20f39;
+  border-bottom-color: #d20f39;
 }
 
 #network {
@@ -173,24 +142,12 @@ tooltip {
   border-bottom: 3px solid #bfbfbf;
 }
 
-#custom-idle_inhibitor {
-  border-bottom: 3px solid #51e258;
-}
-
-#custom-disk {
-  border-bottom: 3px solid #51e258;
-}
-
 #custom-clipboard {
   border-bottom: 3px solid #cba6f7;
 }
 
 #custom-weather {
   border-bottom: 3px solid #89dceb;
-}
-
-#language {
-  border-bottom: 3px solid #f8f8f2;
 }
 
 #temperature {
@@ -205,17 +162,12 @@ tooltip {
   border-bottom: 3px solid #89b4fa;
 }
 
+#tray > .needs-attention {
+  color: pink;
+}
+
 #custom-update {
   border-bottom: 3px solid #b4befe;
-}
-
-#idle_inhibitor {
-  background-color: #171717;
-}
-
-#idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
 }
 
 #custom-notification {
