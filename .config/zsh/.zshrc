@@ -130,9 +130,16 @@ alias swayconf="cd $HOME/.config/sway && nvim"
 alias wayconf="cd $HOME/.config/waybar && nvim"
 alias srczsh="source $HOME/.config/zsh/.zshrc"
 alias gttyconf="nvim $HOME/.config/ghostty/config"
+alias vrooom="swaymsg 'output * adaptive_sync on'"
+alias slowdown="swaymsg 'output * adaptive_sync off'"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=$PATH:~/.config/zvm/bin
+#alias zig='~/Downloads/zig-linux-x86_64-0.14.0-dev.2851+b074fb7dd/zig'
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+source /usr/share/nvm/init-nvm.sh
