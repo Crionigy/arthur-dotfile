@@ -1,0 +1,28 @@
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]
+
+[background]
+path = "/usr/share/backgrounds/dark-castle.png"
+fit = "Fill"
+
+#Passes variables to the environment
+#[env]
+#ENV_VARIABLE = "value"
+XDG_SESSION_TYPE="wayland"
+XDG_SESSION_DESKTOP="sway"
+XDG_CURREN_DESKTOP="sway"
+AMD_VULKAN_ICD="RADV"
+VBLANK_MODE=0
+
+[GTK]
+application_prefer_dark_theme = true
+
+[appearance]
+greeting_msg = "Welcome back!"
+
+[widget.clock]
+format = "%a %H:%M"
+resolution = "500ms"
+label_width = 150
+abel_width = 150
