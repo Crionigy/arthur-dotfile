@@ -1,0 +1,19 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "128.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "Juraj Mäsiar",
+   "description": "Allows you to quickly unload (discard) tab in current window.",
+   "icons": {
+      "128": "128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAymIswr0I61WHgYKCtXd/rzPAwa6+e2f7+B9LsOHr3hI4lfQ/hmIWd0oy+nMb+D9P50yWvlWd8XfP1fuCGq7a2D9OTzFmhQQUA/6AHC7vZaIo2yjqYWGq+Q0/2d3EOO6yIws1F0MYBH/GD2YDQNXCeFL/ZCmIWLBkmYhz/lLQgcZbpK9vZPdaGFZHnIEJ+zt0ohegvNR2S6etnNZwgNZ3gUhtzqPBrYk4MGuOKFWb5c4GzM4SaYFCpr2J28xdO14rFkKKmZ9mbWI5WP4UlyaERkAG/NhNA/AVMe87FVM7dc52RB3eDXNWmwsI6GMM5kYamKxuE4n7LFeOAZZYbmG/OwIDAQAB",
+   "manifest_version": 3,
+   "name": "Unload Tab",
+   "permissions": [ "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1"
+}

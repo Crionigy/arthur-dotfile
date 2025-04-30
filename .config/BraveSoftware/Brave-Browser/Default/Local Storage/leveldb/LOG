@@ -1,0 +1,24 @@
+2025/04/30-15:48:10.567 4 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2025/04/30-15:48:10.637 4 Recovering log #2222
+2025/04/30-15:48:10.653 4 Reusing old log /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/002222.log 
+2025/04/30-15:48:18.528 5 Level-0 table #2226: started
+2025/04/30-15:48:18.530 5 Level-0 table #2226: 18252 bytes OK
+2025/04/30-15:48:18.531 5 Delete type=0 #2222
+2025/04/30-15:49:08.752 5 Level-0 table #2228: started
+2025/04/30-15:49:08.759 5 Level-0 table #2228: 489502 bytes OK
+2025/04/30-15:49:08.760 5 Delete type=0 #2225
+2025/04/30-15:49:08.761 5 Compacting 4@0 + 4@1 files
+2025/04/30-15:49:08.793 5 Generated table #2229@0: 955 keys, 2537184 bytes
+2025/04/30-15:49:08.826 5 Generated table #2230@0: 149 keys, 2667017 bytes
+2025/04/30-15:49:08.855 5 Generated table #2231@0: 232 keys, 2113862 bytes
+2025/04/30-15:49:08.862 5 Generated table #2232@0: 383 keys, 504955 bytes
+2025/04/30-15:49:08.862 5 Compacted 4@0 + 4@1 files => 7823018 bytes
+2025/04/30-15:49:08.863 5 compacted to: files[ 0 4 0 0 0 0 0 ]
+2025/04/30-15:49:08.863 5 Delete type=2 #2216
+2025/04/30-15:49:08.863 5 Delete type=2 #2217
+2025/04/30-15:49:08.863 5 Delete type=2 #2226
+2025/04/30-15:49:08.863 5 Delete type=2 #2223
+2025/04/30-15:49:08.863 5 Delete type=2 #2218
+2025/04/30-15:49:08.863 5 Delete type=2 #2228
+2025/04/30-15:49:08.863 5 Delete type=2 #2215
+2025/04/30-15:49:08.863 5 Delete type=2 #2220

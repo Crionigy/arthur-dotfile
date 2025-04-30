@@ -1,0 +1,6 @@
+2025/03/12-01:48:51.993 aa74 Creating DB /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_fontawesome.com_0.indexeddb.leveldb since it was missing.
+2025/03/12-01:48:51.995 aa74 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_fontawesome.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/12-02:02:31.273 aa75 Level-0 table #5: started
+2025/03/12-02:02:31.275 aa75 Level-0 table #5: 12301 bytes OK
+2025/03/12-02:02:31.277 aa75 Delete type=0 #3
+2025/03/12-02:02:31.278 aa75 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

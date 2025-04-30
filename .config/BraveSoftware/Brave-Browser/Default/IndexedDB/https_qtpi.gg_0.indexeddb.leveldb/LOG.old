@@ -1,0 +1,18 @@
+2025/04/05-16:37:57.788 554 Creating DB /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_qtpi.gg_0.indexeddb.leveldb since it was missing.
+2025/04/05-16:37:57.790 554 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_qtpi.gg_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/05-16:37:57.796 556 Level-0 table #5: started
+2025/04/05-16:37:57.797 556 Level-0 table #5: 751 bytes OK
+2025/04/05-16:37:57.798 556 Delete type=0 #3
+2025/04/05-16:37:57.799 554 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/05-16:38:08.948 555 Level-0 table #7: started
+2025/04/05-16:38:08.949 555 Level-0 table #7: 3043 bytes OK
+2025/04/05-16:38:08.950 555 Delete type=0 #4
+2025/04/05-16:38:08.950 555 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2025/04/05-16:38:08.950 555 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x003\x001\x004\x002\x001\x001\x006\x003\x005\x004\x001\x008\x00:\x00w\x00e\x00b\x00:\x00a\x006\x004\x007\x007\x00d\x007\x00e\x00b\x003\x006\x00c\x000\x007\x007\x008\x00b\x00e\x005\x005\x00e\x003' @ 108 : 1
+2025/04/05-16:38:08.950 555 Compacting 1@1 + 1@2 files
+2025/04/05-16:38:08.951 555 Generated table #8@1: 36 keys, 1551 bytes
+2025/04/05-16:38:08.951 555 Compacted 1@1 + 1@2 files => 1551 bytes
+2025/04/05-16:38:08.952 555 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/04/05-16:38:08.952 555 Delete type=2 #7
+2025/04/05-16:38:08.952 555 Delete type=2 #5
+2025/04/05-16:38:08.952 555 Manual compaction at level-1 from '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x003\x001\x004\x002\x001\x001\x006\x003\x005\x004\x001\x008\x00:\x00w\x00e\x00b\x00:\x00a\x006\x004\x007\x007\x00d\x007\x00e\x00b\x003\x006\x00c\x000\x007\x007\x008\x00b\x00e\x005\x005\x00e\x003' @ 108 : 1 .. (end); will stop at (end)

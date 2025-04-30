@@ -1,0 +1,16 @@
+[
+    {
+        "id": 5,
+        "priority": 2,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "transform": { "host": "old.reddit.com" }
+            }
+        },
+        "condition": {
+            "regexFilter": "^https://(www|sh|new)\\.reddit\\.com/r/(\\w)*($|\\?|/($|\\?|hot|new|top|rising|comments/(\\w)+|wiki|search))",
+            "resourceTypes": ["main_frame"]
+        }
+    }
+]

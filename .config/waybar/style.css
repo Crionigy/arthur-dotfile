@@ -143,6 +143,8 @@ tooltip {
 }
 
 #custom-clipboard {
+  /*padding: 0 6px;*/
+  padding-right: 6px;
   border-bottom: 3px solid #cba6f7;
 }
 

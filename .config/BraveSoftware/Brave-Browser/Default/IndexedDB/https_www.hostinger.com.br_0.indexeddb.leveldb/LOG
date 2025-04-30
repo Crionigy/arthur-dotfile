@@ -1,0 +1,14 @@
+2025/04/29-07:47:12.541 52d Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hostinger.com.br_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/29-07:47:12.541 52d Recovering log #50
+2025/04/29-07:47:12.544 52d Reusing old log /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hostinger.com.br_0.indexeddb.leveldb/000050.log 
+2025/04/29-07:47:12.545 52d Delete type=2 #48
+2025/04/29-07:47:12.619 52d Level-0 table #55: started
+2025/04/29-07:47:12.630 52d Level-0 table #55: 518 bytes OK
+2025/04/29-07:47:12.643 52d Delete type=0 #50
+2025/04/29-07:47:12.643 52d Manual compaction at level-0 from '\x00\x0f\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x10\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0f\x00\x00\x05' @ 326 : 1
+2025/04/29-07:47:12.643 52d Compacting 1@0 + 1@1 files
+2025/04/29-07:47:12.656 52d Generated table #56@0: 13 keys, 514 bytes
+2025/04/29-07:47:12.656 52d Compacted 1@0 + 1@1 files => 514 bytes
+2025/04/29-07:47:12.667 52d compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/04/29-07:47:12.667 52d Delete type=2 #55
+2025/04/29-07:47:12.667 52d Manual compaction at level-0 from '\x00\x0f\x00\x00\x05' @ 326 : 1 .. '\x00\x10\x00\x00\x00' @ 0 : 0; will stop at (end)

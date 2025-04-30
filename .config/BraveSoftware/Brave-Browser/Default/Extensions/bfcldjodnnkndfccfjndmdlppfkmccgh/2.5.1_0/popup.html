@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #1A1A1B;
+                width: 300;
+            }
+            label {
+                color: #d7dadc;
+            }
+            p {
+                color: #d7dadc;
+            }
+            a {
+                color: #4fbcff;
+            }
+            #warning {
+                visibility: hidden;
+            }
+            #changeapply {
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            #email {
+                color: #4fbcff;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            #injectNewRedditScript > button, div#changeapply button {
+                background: transparent;
+                border: 1px solid #d7dadc;
+                border-radius: 9999px;
+                color: #d7dadc;
+                cursor: pointer;
+                padding: 4px 16px;
+            }
+            #injectNewRedditScript {
+                margin-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <label for="interface-select">Choose an interface:</label><br>
+            <select name="interfaces" id="interface-select">
+                <option value="default">Use default</option>
+                <option value="sh">3rd generation (sh.reddit.com)</option>
+                <option value="new">2nd generation (new.reddit.com)</option>
+                <option value="old">1st generation (old.reddit.com)</option>
+            </select>
+            <p id="warning">Note: make sure that you are logged in before applying these preferences</p>
+        </div>
+        <div>
+            <input type="checkbox" id="card-custom" name="card-custom" value="card-custom">
+            <label for="card-custom">Use custom post color (3rd generation)</label>
+        </div>
+        <div>
+            <input id="card-select" type="color" value="#fafafb"/>
+            <button type="button" id="card-reset">Reset to default</button>
+        </div>
+        <div>
+            <input type="checkbox" id="hyperlink-custom" name="hyperlink-custom" value="hyperlink-custom">
+            <label for="hyperlink-custom">Use custom link color (3rd generation)</label>
+        </div>
+        <div>
+            <input id="hyperlink-select" type="color" value="#115bca"/>
+            <button type="button" id="hyperlink-reset">Reset to default</button>
+        </div>
+        <p></p>
+        <div>
+            <input type="checkbox" id="removeSidebar" name="removeSidebar" value="removeSidebar">
+            <label for="removeSidebar">Remove sidebar (3rd generation)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="rawImage" name="rawImage" value="rawImage">
+            <label for="rawImage">Load images directly if possible</label>
+        </div>
+        <div id="changeapply">
+            <button type="button" id="apply">Apply changes</button>
+        </div>
+        <div id="injectNewRedditScript">
+            <p>Looking for the 2nd generation UI? It has been moved to the "Choose an interface" drop-down menu at the top</p>
+        </div>
+        <div>
+            <p>Contact: <span id="email">andre@andremeri.com</span></p>
+        </div>
+        <div>
+            <a id="donote" href="https://www.paypal.com/donate/?hosted_button_id=FAHNF7EFR77PG">PayPal</a>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

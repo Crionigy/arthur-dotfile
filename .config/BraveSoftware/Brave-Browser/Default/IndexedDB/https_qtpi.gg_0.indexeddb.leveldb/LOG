@@ -1,0 +1,28 @@
+2025/04/05-16:39:59.521 555 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_qtpi.gg_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/05-16:39:59.521 555 Recovering log #6
+2025/04/05-16:39:59.521 555 Reusing old log /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_qtpi.gg_0.indexeddb.leveldb/000006.log 
+2025/04/05-16:39:59.527 659 Level-0 table #11: started
+2025/04/05-16:39:59.528 659 Level-0 table #11: 621 bytes OK
+2025/04/05-16:39:59.529 659 Delete type=0 #6
+2025/04/05-16:39:59.529 554 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/05-16:45:34.607 555 Level-0 table #13: started
+2025/04/05-16:45:34.608 555 Level-0 table #13: 2043 bytes OK
+2025/04/05-16:45:34.609 555 Delete type=0 #10
+2025/04/05-16:45:34.609 554 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 199 : 1
+2025/04/05-16:45:34.609 554 Compacting 1@0 + 1@1 files
+2025/04/05-16:45:34.610 554 Generated table #14@0: 22 keys, 1368 bytes
+2025/04/05-16:45:34.610 554 Compacted 1@0 + 1@1 files => 1368 bytes
+2025/04/05-16:45:34.611 554 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/04/05-16:45:34.611 554 Delete type=2 #13
+2025/04/05-16:45:34.611 554 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 199 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/05-16:46:32.928 556 Level-0 table #16: started
+2025/04/05-16:46:32.929 556 Level-0 table #16: 2046 bytes OK
+2025/04/05-16:46:32.930 556 Delete type=2 #11
+2025/04/05-16:46:32.930 556 Delete type=0 #12
+2025/04/05-16:46:32.930 554 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 242 : 1
+2025/04/05-16:46:32.930 554 Compacting 1@0 + 1@1 files
+2025/04/05-16:46:32.931 554 Generated table #17@0: 34 keys, 1487 bytes
+2025/04/05-16:46:32.931 554 Compacted 1@0 + 1@1 files => 1487 bytes
+2025/04/05-16:46:32.932 554 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/04/05-16:46:32.932 554 Delete type=2 #16
+2025/04/05-16:46:32.932 554 Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 242 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

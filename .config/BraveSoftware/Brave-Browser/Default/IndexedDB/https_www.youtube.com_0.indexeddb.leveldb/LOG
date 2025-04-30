@@ -1,0 +1,12 @@
+2025/04/30-15:48:13.814 8ab Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/30-15:48:13.815 8ab Recovering log #821
+2025/04/30-15:48:13.841 8ab Reusing old log /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000821.log 
+2025/04/30-15:48:15.828 798 Level-0 table #826: started
+2025/04/30-15:48:15.837 798 Level-0 table #826: 1588066 bytes OK
+2025/04/30-15:48:15.839 798 Delete type=0 #821
+2025/04/30-15:48:17.909 79a Compacting 1@1 + 1@2 files
+2025/04/30-15:48:17.917 79a Generated table #827@1: 363 keys, 103387 bytes
+2025/04/30-15:48:17.917 79a Compacted 1@1 + 1@2 files => 103387 bytes
+2025/04/30-15:48:17.920 79a compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/04/30-15:48:17.920 79a Delete type=2 #823
+2025/04/30-15:48:17.920 79a Delete type=2 #826

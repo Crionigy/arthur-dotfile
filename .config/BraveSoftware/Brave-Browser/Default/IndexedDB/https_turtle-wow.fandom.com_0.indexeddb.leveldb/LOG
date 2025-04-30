@@ -1,0 +1,7 @@
+2025/04/19-18:51:21.099 795 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_turtle-wow.fandom.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/19-18:51:21.099 795 Recovering log #3
+2025/04/19-18:51:21.102 795 Reusing old log /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_turtle-wow.fandom.com_0.indexeddb.leveldb/000003.log 
+2025/04/19-18:51:23.309 795 Level-0 table #5: started
+2025/04/19-18:51:23.312 795 Level-0 table #5: 124679 bytes OK
+2025/04/19-18:51:23.313 795 Delete type=0 #3
+2025/04/19-18:51:23.313 795 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,6 @@
+2025/03/15-00:25:43.377 de99 Creating DB /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_drf.rs_0.indexeddb.leveldb since it was missing.
+2025/03/15-00:25:43.380 de99 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_drf.rs_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/15-00:27:14.721 de9a Level-0 table #5: started
+2025/03/15-00:27:14.723 de9a Level-0 table #5: 261248 bytes OK
+2025/03/15-00:27:14.724 de9a Delete type=0 #3
+2025/03/15-00:27:14.724 de9a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

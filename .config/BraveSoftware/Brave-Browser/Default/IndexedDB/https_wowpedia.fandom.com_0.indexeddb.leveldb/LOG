@@ -1,0 +1,6 @@
+2025/04/01-11:37:18.844 769 Creating DB /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_wowpedia.fandom.com_0.indexeddb.leveldb since it was missing.
+2025/04/01-11:37:18.846 769 Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_wowpedia.fandom.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/01-11:37:29.369 75e Level-0 table #5: started
+2025/04/01-11:37:29.370 75e Level-0 table #5: 27204 bytes OK
+2025/04/01-11:37:29.371 75e Delete type=0 #3
+2025/04/01-11:37:29.371 75e Manual compaction at level-0 from (begin) .. (end); will stop at (end)

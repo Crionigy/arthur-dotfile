@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+# if you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
@@ -130,8 +130,13 @@ alias swayconf="cd $HOME/.config/sway && nvim"
 alias wayconf="cd $HOME/.config/waybar && nvim"
 alias srczsh="source $HOME/.config/zsh/.zshrc"
 alias gttyconf="nvim $HOME/.config/ghostty/config"
-alias vrooom="swaymsg 'output * adaptive_sync on'"
-alias slowdown="swaymsg 'output * adaptive_sync off'"
+alias get_outputs="swaymsg -t get_outputs"
+alias get_tree="swaymsg -t get_tree"
+alias burrito="/nvme/bottles/Guild-Wars-2/drive_c/Program\ \Files/burrito_link/burrito.x86_64"
+alias vrooom="swaymsg 'output * adaptive_sync on allow_tearing yes max_render_time off' && swaymsg 'for_window [all] max_render_time off allow_tearing yes'"
+alias slowdown="swaymsg 'output * adaptive_sync off allow_tearing no' && swaymsg 'for_window [all] max_render_time off allow_tearing no'"
+alias streaming="swaymsg 'output * adaptive_sync on allow_tearing no max_render_time off' && swaymsg 'for_window [all] max_render_time off allow_tearing yes'"
+alias connect-server="ssh root@82.29.60.250"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -143,3 +148,8 @@ export PATH=$PATH:~/.config/zvm/bin
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 source /usr/share/nvm/init-nvm.sh
+
+# bun completions
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "/home/crionigy/.bun/_bun" ] && source "/home/crionigy/.bun/_bun"

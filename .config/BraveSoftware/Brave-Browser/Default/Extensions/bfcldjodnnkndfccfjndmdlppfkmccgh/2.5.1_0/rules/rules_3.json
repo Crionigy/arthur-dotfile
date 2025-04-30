@@ -1,0 +1,16 @@
+[
+    {
+        "id": 3,
+        "priority": 3,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "transform": { "host": "sh.reddit.com" }
+            }
+        },
+        "condition": {
+            "regexFilter": "^https://(www|old|new)\\.reddit\\.com/u(ser)?/[0-9A-Za-z_-]*($|\\?|/($|\\?|submitted|comments|saved))",
+            "resourceTypes": ["main_frame"]
+        }
+    }
+]
