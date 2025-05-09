@@ -9,7 +9,7 @@ return {
     version = "v0.*",
 
     opts = {
-      sources = {
+        sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
           lazydev = {

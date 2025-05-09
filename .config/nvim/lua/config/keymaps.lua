@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- Telescope
 -- Open neovim config files
 map("n", "<leader>fn", function()
-  require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+    require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "telescope open neovim config files" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
@@ -27,6 +27,10 @@ map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+
+-- Moving arround tabs
+map("n", "<A-k>", "gt", { desc = "switch next tab" })
+map("n", "<A-j>", "gT", { desc = "switch previous tab" })
 
 -- Clear highlights
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
@@ -68,7 +72,7 @@ map("i", "<C-p>", "<c-r>+", { desc = "general Paste while in insert mode" })
 
 -- Format File
 map("n", "<leader>fm", function()
-  require("conform").format({ lsp_fallback = true })
+    require("conform").format({ lsp_fallback = true })
 end, { desc = "general Format file" })
 
 -- Run Love2d

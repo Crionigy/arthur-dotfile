@@ -6,7 +6,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("nvim-tree").setup {
+    require("nvim-tree").setup({
       filters = { dotfiles = false },
       disable_netrw = true,
       hijack_cursor = true,
@@ -16,7 +16,7 @@ return {
         update_root = false,
       },
       view = {
-        width = 30,
+        width = 50,
         preserve_window_proportions = true,
       },
       renderer = {
@@ -37,6 +37,6 @@ return {
           },
         },
       },
-    }
+    })
   end,
 }
