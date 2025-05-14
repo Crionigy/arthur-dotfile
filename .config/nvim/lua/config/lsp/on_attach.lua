@@ -27,21 +27,7 @@ end
 -- Trigger on save to format file
 local on_attach = {
     callback = function(args)
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if not client then
-            return
-        end
-
         lsp_key_maps(args.buf)
-
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*",
-                callback = function()
-                    require("conform").format({ bufnr = args.buf })
-                end,
-            })
-        end
     end,
 }
 
