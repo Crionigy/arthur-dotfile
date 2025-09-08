@@ -5,7 +5,7 @@ return {
             formatters_by_ft = {
                 cs = { "csharpier" },
                 lua = { "stylua" },
-                -- html = { "prettierd" },
+                html = { "prettierd" },
                 css = { "prettierd" },
                 javascript = { "prettierd" },
                 typescript = { "prettierd" },

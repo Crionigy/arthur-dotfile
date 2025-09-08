@@ -13,6 +13,14 @@ local symbols = {
     newfile = "󰎔",
 }
 
+local lint_progress = function()
+  local linters = require("lint").get_running()
+  if #linters == 0 then
+      return "󰦕"
+  end
+  return "󱉶 " .. table.concat(linters, ", ")
+end
+
 return {
     {
         "nvim-lualine/lualine.nvim",
@@ -28,7 +36,7 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { { "filename", symbols = symbols }, "diagnostics" },
                 lualine_c = { "branch", "diff", "lsp_progress" },
-                lualine_x = { "searchcount", "selectioncount", harpoon_config, "lsp_client_name" },
+                lualine_x = { "searchcount", "selectioncount", harpoon_config, "lsp_client_name", lint_progress },
                 lualine_y = { "encoding", "filetype" },
                 lualine_z = { "location" },
             },

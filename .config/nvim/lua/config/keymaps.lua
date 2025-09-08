@@ -1,10 +1,6 @@
 local map = vim.keymap.set
 
 -- Telescope
--- Open neovim config files
-map("n", "<leader>fn", function()
-    require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
-end, { desc = "telescope open neovim config files" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
@@ -13,6 +9,11 @@ map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find mark
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
+
+-- Open neovim config files
+map("n", "<leader>fn", function()
+    require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+end, { desc = "telescope open neovim config files" })
 
 -- Moving arround Insert mode
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
@@ -67,6 +68,7 @@ map("n", ";", ":", { desc = "Enter cmd mode" })
 
 -- Close current window
 map("n", "<leader>x", ":wincmd c<CR>", { desc = "Close current window" })
+
 -- Paste while in insert mode
 map("i", "<C-p>", "<c-r>+", { desc = "general Paste while in insert mode" })
 
