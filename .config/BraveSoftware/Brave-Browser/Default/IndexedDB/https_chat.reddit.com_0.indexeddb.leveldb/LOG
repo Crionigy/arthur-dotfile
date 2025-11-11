@@ -1,6 +1,0 @@
-2025/04/01-18:49:35.685 75e Creating DB /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_chat.reddit.com_0.indexeddb.leveldb since it was missing.
-2025/04/01-18:49:35.688 75e Reusing MANIFEST /home/crionigy/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_chat.reddit.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/04/01-18:49:40.489 769 Level-0 table #5: started
-2025/04/01-18:49:40.491 769 Level-0 table #5: 6977 bytes OK
-2025/04/01-18:49:40.492 769 Delete type=0 #3
-2025/04/01-18:49:40.492 769 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
