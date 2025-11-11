@@ -15,7 +15,7 @@ Set-PsFzfOption -EnableAliasFuzzyEdit
 
 $NVIM_CONFIG = 'C:\Users\ahsouki\AppData\Local\nvim'
 # $Config = 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin_mocha.omp.json'
-$Config = 'C:\Users\ahsouki\catppuccin-mocha.omp.json'
+$Config = 'C:\Users\ahsouki\.config\catppuccin-mocha.omp.json'
 
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 oh-my-posh init pwsh --config $Config | Invoke-Expression
