@@ -1,71 +1,88 @@
-[{ 
-    "layer": "top",
-    "height": 30,
-    "output": "DP-3",
-    "position": "top",
-    "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-center": ["custom/playerctl", "custom/wf-recorder", "sway/mode"],
-    "modules-right": [
-        "custom/weather",
-        "custom/clipboard",
-	    "gamemode",
+{
+	"output": "HDMI-A-1",
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 48, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (0px) Adjusted in the css
+    "margin-top": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": [
+        "hyprland/workspaces",
         "cpu",
         "memory",
-		"custom/scratchpad",
         "temperature",
-        "network",
-        "bluetooth",
-        "pulseaudio",
-        "custom/update",
-        "tray",
-        "clock",
-        "custom/notification"
+        "disk",
+        "custom/updates"
     ],
-
-    "sway/workspaces": {
-		"disable-scroll": true,
-        "format": "{index}: {windows}",
+    "modules-center": [ "custom/playerctl" ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+		"bluetooth",
+        "custom/notifications",
+        "tray",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "format": "{id}: {windows}",
         "format-window-separator": " | ",
-        "window-rewrite-default": "{name}",
-        "window-format": "<span color='#e0e0e0'>{name}</span>",
-        "window-rewrite": {
-            "class<discord>": "󰙯  Discord",
-	  		"class<Google-chrome>": "  Chrome",
-          	"class<steam>": "󰓓  Steam",
-			"class<obsidian>": "  Obsidian",
-			"class<foot>": "󰽒  Foot",
-			"class<com.mitchellh.ghostty>": "  Ghostty",
-			"class<com.usebottles.bottles>": "  Bottles",
-			"class<bottles>": "  Bottles",
-			"class<Spotify>": "  Spotify",
-			"title<.*WhatsApp.*>": "  WhatsApp",
-			"title<.*Battle.net.*>": "  Battle.net",
-			"class<GitHub Desktop>": "   GitHub",
-		    "class<Minecraft Launcher>": "󰍳  Minecraft",
-		    "class<BoltLauncher>": "  Bolt",
-		    "class<CurseForge>": "󰢛  CurseForge",
-		  	"class<Brave-browser>": "  Brave",
-		  	"class<RuneScape>": "󰺷  RS3",
-		  	"class<gw.exe>": "󰺷   Gw1",
-		  	"class<gw2-64.exe>": "󰺷   Gw2",
-		  	"class<net-runelite-client-RuneLite>": "󰺷   OSRS",
-		  	"class<steam_proton> title<.*Warcraft.*>": "󰺷   WoW",
-        }
+        "window-rewrite-default": "󰣆",
+		"window-rewrite": {
+			"class<discord>": "󰙯",
+			"class<obsidian>": "",
+			"class<com.mitchellh.ghostty>": "",
+			"class<Spotify>": "",
+			"class<GitHub Desktop>": "",
+			"class<Brave-browser>": "",
+			"class<org.kde.dolphin>": "",
+			"class<Godot>": "",
+			"class<Code>": "󰨞"
+		}
     },
-
-    "sway/window": {
-        "format": "{title}",
-        "all-outputs": true,
-        "icon": true,
-        "icon-size": 20,
-        "max-length": 150,
-        "rewrite": {
-          "(.*) — Mozilla Firefox": "$1",
-          "(.*) - Brave": "$1"
-        }
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "on-click": "ghostty --class=.floating.shell -e sh -c 'btop'",
+        "interval": 2
     },
-
-    "custom/playerctl": {
+    "memory": {
+        "format": "⛃ {}%",
+        "tooltip": true,
+        "on-click": "ghostty --class=.floating.shell -e sh -c 'btop'",
+        "interval": 2
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 40,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "tooltip": true,
+        "on-click": "ghostty --class=.floating.shell -e sh -c 'btop'",
+        "interval": 2
+    },
+    "disk": {
+        "format": " {percentage_used}% ({free})",
+        "tooltip": true,
+        "on-click": "ghostty --class=.floating.shell -e sh -c 'btop'",
+        "interval": 2
+    },
+    "custom/updates": {
+        "format": "{}",
+        "exec": "~/.scripts/updates",
+        "on-click": "~/.scripts/updates update",
+        "interval": 600,
+        "tooltip": true
+        // "tooltip-format": "{}",
+        // "exec-tooltip": "~/.scripts/updates tooltip"
+    },
+	 "custom/playerctl": {
         "interval": 2,
         "tooltip": true,
         "return-type": "json",
@@ -81,121 +98,49 @@
         "on-scroll-down": "playerctl position 10-",
         "signal": 5
     },
-
-    "custom/wf-recorder": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{}",
-        "exec": "echo '{\"class\": \"recording\",\"text\":\"󰑊\",\"tooltip\":\"press $mod+Esc to stop recording\"}'",
-        "exec-if": "pgrep wf-recorder",
-        "on-click": "waybar-signal recorder",
-        "signal": 8
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "tooltip": false
-    },
-
-    "custom/weather": {
-        "format": "{}",
-        "tooltip": true,
-        "interval": 3600,
-        // accepts -c/--city <city> -t/--temperature <C/F> -d/--distance <km/miles>
-        "exec": "/usr/share/sway/scripts/weather.py",
-        "return-type": "json",
-        "on-click": "xdg-open \"https://wttr.in/$(curl -s https://manjaro-sway.download/geoip | jq -r '.city')\"",
-        "on-click-right": "waybar-signal weather",
-        "signal": 16
-    },
-
-    "gamemode": {
-        "format": "{glyph} {count}",
-        "glyph": "󱎓 ",
-        "hide-not-running": true,
-        "use-icon": false,
-        "icon-name": "input-gaming-symbolic",
-        "icon-spacing": 0,
-        "icon-size": 0,
-    },
-
-    "cpu": {
-        "interval": 1,
-        "format": "󰘚 {usage}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "swaymsg exec \\$task_manager",
-        "tooltip": true
-    },
-
-    "memory": {
-        "interval": 1,
-        "format": "󰍛 {percentage}% | {used}GiB",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "swaymsg exec \\$task_manager",
-        "tooltip": true,
-		"tooltip-format": "{used:0.1f}G/{total:0.1f}G"
-    },
-
-    "custom/scratchpad": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{icon}",
-        "format-icons": {
-            "one": "󰖯",
-            "many": "󰖲"
-        },
-        "exec": "/bin/sh /usr/share/sway/scripts/scratchpad.sh",
-        "on-click": "swaymsg 'scratchpad show'",
-        "signal": 7
-    },
-
-    "custom/clipboard": {
-        "format": "󱉬",
-        "interval": "once",
-        "return-type": "json",
-        "on-click": "swaymsg -q exec '$clipboard'; waybar-signal clipboard",
-        "on-click-right": "swaymsg -q exec '$clipboard-del'; waybar-signal clipboard",
-        "on-click-middle": "rm -f ~/.cache/cliphist/db; waybar-signal clipboard",
-        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
-        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
-        "signal": 9
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "interval": 5,
-        "format": "{temperatureC}°C ",
-        "on-click": "swaymsg exec \"\\$once \\$term_float watch sensors\""
-    },
-
     "network": {
-        "interval": 5,
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀  {ifname}",
-        "format-disconnected": "󰖪",
-        "format-disabled": "󰀝",
-        "format-icons": [
-            "󰤯",
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
-        "tooltip-format": "{icon} {ifname}: {ipaddr}",
-        "tooltip-format-ethernet": "{ifname}: {ipaddr}\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}\nTotal: {bandwidthTotalBits}",
-        "tooltip-format-wifi": "{icon} {ifname} ({essid}): {ipaddr}",
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format": "↕{bandwidthTotalBytes}",
+        "format-disconnected": "{icon} No Internet",
+        "format-linked": " {ifname} (No IP)",
+        "format-alt": "↕{bandwidthUpBytes} | ↕{bandwidthDownBytes}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}  {gwaddr}",
+        "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "{icon} Disconnected",
-        "tooltip-format-disabled": "{icon} Disabled",
-        "on-click": "swaymsg exec \\$once \\$term_float nmtui connect"
+        "on-click-right": "nm-connection-editor",
+        "format-icons": {
+            "ethernet": "",
+            "disconnected": "⚠",
+            "wifi": [
+                "睊",
+                "直"
+            ]
+        },
+        "interval": 2
     },
-
-    "bluetooth": {
+    "pulseaudio": {
+        "format": " {volume}%", // {format_source}
+        "format-bluetooth": "󰋋 {volume}%", // {format_source}
+        "format-muted": "", // {format_source}
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": " ",
+			"hands-free": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "ghostty --class=floating.shell -e pulsemixer"
+    },
+	"bluetooth": {
         "format": "󰂯 {status}",
         "format-disabled": "󰂲 ",
 		"format-connected": "󰂯  {num_connections} Connected",
@@ -203,268 +148,42 @@
 		"tooltip-format-connected": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "swaymsg exec \\$bluetooth",
-        "on-click-right": "rfkill toggle bluetooth",
+        "on-click": "ghostty --class=floating.shell -e bluetuith",
+        "on-click-right": "rfkill toggle bluetooth"
     },
-
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}% {format_source}",
-        "format-muted": "{icon} {volume}%",
-        "format-source": "",
-        "format-source-muted": "󰖁 ",
-        "format-icons": {
-            "headphone": "󰋋 ",
-            "headphone-muted": "󰟎 ",
-            "hands-free": "󰋋 ",
-            "hands-free-muted": "󰟎 ",
-            "headset": "󰋎 ",
-            "headset-muted": "󰋐 ",
-			"speaker": "󰓃 ",
-			"speaker-muted": "󰓄 ",
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "tooltip-format": "{icon}  {volume}% {desc}",
-        "on-click": "swaymsg exec \\$pulseaudio",
-        "on-click-middle": "swaymsg exec \\$volume_mute",
-        "on-scroll-up": "swaymsg exec \\$volume_up",
-        "on-scroll-down": "swaymsg exec \\$volume_down"
-    },
-
-    "custom/update": {
-        "format": "󰀼 {}",
-        "interval": 1800,
-        "return-type": "json",
-        "exec-if": "/usr/share/sway/scripts/checkupdates.sh check",
-        "exec": "/usr/share/sway/scripts/checkupdates.sh status",
-        "signal": 14
-    },
-
-    "tray": {
-        "icon-size": 14,
-        "spacing": 5
-    },
-
-    "sway/language": {
-        "format": " {}",
-        "min-length": 5,
+    "custom/notifications": {
         "tooltip": false,
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
-    },
-
-
-    "clock": {
-        "interval": 60,
-        "format": "{:%e %b %Y %H:%M}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "on-click": "swaymsg exec \\$calendar"
-    },
-
-    "custom/notification": {
-      "tooltip": false,
-      "format": "{icon}",
-      "format-icons": {
-		  "notification": "<span foreground='red'><sup></sup></span>",
-		  "none": "",
-		  "dnd-notification": "<span foreground='red'><sup></sup></span>",
-		  "dnd-none": "",
-		  "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-		  "inhibited-none": "",
-		  "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-		  "dnd-inhibited-none": ""
-      },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    }
-}, 
-{
-    "layer": "top",
-    "height": 30,
-    "output": "DP-1",
-    "position": "top",
-    "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-center": ["custom/wf-recorder", "sway/mode"],
-    "modules-right": [
-	"gamemode",
-        "cpu",
-        "memory",
-        "temperature",
-        "bluetooth",
-        "pulseaudio",
-        "tray",
-        "clock",
-        "custom/notification"
-    ],
-
-    "sway/workspaces": {
-		"disable-scroll": true,
-        "format": "{index}: {windows}",
-        "format-window-separator": " | ",
-        "window-rewrite-default": "{name}",
-        "window-format": "<span color='#e0e0e0'>{name}</span>",
-        "window-rewrite": {
-            "class<discord>": "󰙯  Discord",
-	  		"class<Google-chrome>": "  Chrome",
-          	"class<steam>": "󰓓  Steam",
-			"class<obsidian>": "  Obsidian",
-			"class<foot>": "󰽒  Foot",
-			"class<com.mitchellh.ghostty>": "  Ghostty",
-			"class<com.usebottles.bottles>": "  Bottles",
-			"class<bottles>": "  Bottles",
-			"class<Spotify>": "  Spotify",
-			"title<.*WhatsApp.*>": "  WhatsApp",
-			"title<.*Battle.net.*>": "  Battle.net",
-			"class<GitHub Desktop>": "   GitHub",
-		    "class<Minecraft Launcher>": "󰍳  Minecraft",
-		    "class<BoltLauncher>": "  Bolt",
-		    "class<CurseForge>": "󰢛  CurseForge",
-		  	"class<Brave-browser>": "  Brave",
-		  	"class<RuneScape>": "󰺷  RS3",
-		  	"class<gw.exe>": "󰺷   Gw1",
-		  	"class<gw2-64.exe>": "󰺷   Gw2",
-		  	"class<net-runelite-client-RuneLite>": "󰺷   OSRS",
-		  	"class<steam_proton> title<.*Warcraft.*>": "󰺷   WoW",
-        }
-    },
-    "sway/window": {
-        "format": "{title}",
-        "all-outputs": true,
-        "icon": true,
-        "icon-size": 20,
-        "max-length": 50,
-        "rewrite": {
-          "(.*) — Mozilla Firefox": "$1",
-          "(.*) - Brave": "$1"
-        }
-    },
-
-    "custom/wf-recorder": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{}",
-        "exec": "echo '{\"class\": \"recording\",\"text\":\"󰑊\",\"tooltip\":\"press $mod+Esc to stop recording\"}'",
-        "exec-if": "pgrep wf-recorder",
-        "on-click": "waybar-signal recorder",
-        "signal": 8
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "tooltip": false
-    },
-
-    "gamemode": {
-        "format": "{glyph} {count}",
-        "glyph": "󱎓 ",
-        "hide-not-running": true,
-        "use-icon": false,
-        "icon-name": "input-gaming-symbolic",
-        "icon-spacing": 0,
-        "icon-size": 0,
-    },
-
-    "cpu": {
-        "interval": 1,
-        "format": "󰘚 {usage}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "swaymsg exec \\$task_manager",
-        "tooltip": true
-    },
-
-    "memory": {
-        "interval": 1,
-        "format": "󰍛 {percentage}% | {used}GiB",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "swaymsg exec \\$task_manager",
-        "tooltip": true,
-	"tooltip-format": "{used:0.1f}G/{total:0.1f}G"
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "interval": 5,
-        "format": "{temperatureC}°C ",
-        "on-click": "swaymsg exec \"\\$once \\$term_float watch sensors\""
-    },
-
-    "bluetooth": {
-        "format": "󰂯 {status}",
-        "format-disabled": "󰂲 ",
-	"format-connected": "󰂯  {num_connections} Connected",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	"tooltip-format-connected": "{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "swaymsg exec \\$bluetooth",
-        "on-click-right": "rfkill toggle bluetooth",
-    },
-
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}% {format_source}",
-        "format-muted": "{icon} {volume}%",
-        "format-source": "",
-        "format-source-muted": "󰖁 ",
+        "format": "{icon}",
         "format-icons": {
-            "headphone": "󰋋 ",
-            "headphone-muted": "󰟎 ",
-            "hands-free": "󰋋 ",
-            "hands-free-muted": "󰟎 ",
-            "headset": "󰋎 ",
-            "headset-muted": "󰋐 ",
-			"speaker": "󰓃 ",
-			"speaker-muted": "󰓄 ",
-            "default": ["󰕿", "󰖀", "󰕾"]
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": ""
         },
-        "tooltip-format": "{icon}  {volume}% {desc}",
-        "on-click": "swaymsg exec \\$pulseaudio",
-        "on-click-middle": "swaymsg exec \\$volume_mute",
-        "on-scroll-up": "swaymsg exec \\$volume_up",
-        "on-scroll-down": "swaymsg exec \\$volume_down"
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.15 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.15 && swaync-client -d -sw",
+        "escape": true
     },
-
     "tray": {
-        "icon-size": 14,
-        "spacing": 5
+        "format": "{icon}",
+        "icon-size": 15,
+        "spacing": 15
     },
-
     "clock": {
-        "interval": 60,
-        "format": "{:%e %b %Y %H:%M}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "on-click": "swaymsg exec \\$calendar"
-    },
-
-    "custom/notification": {
-      "tooltip": false,
-      "format": "{icon}",
-      "format-icons": {
-        "notification": "<span foreground='red'><sup></sup></span>",
-        "none": "",
-        "dnd-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-none": "",
-        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "inhibited-none": "",
-        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
-      },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    },
-}]
+		// "locale": "pt_BR.UTF-8",
+        "timezone": "America/Sao_Paulo",
+        "format": " {:%d/%m %A %H:%M}",
+        //"format": " {:%a %b %d %Y | %H:%M}",
+        "format-alt": " {:%A %B %d %Y (%V) | %r}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar-weeks-pos": "right",
+        "today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
+        "format-calendar": "<span color='#f2cdcd'><b>{}</b></span>",
+        "format-calendar-weeks": "<span color='#94e2d5'><b>W{:%U}</b></span>",
+        "format-calendar-weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "interval": 60
+    }
+}
