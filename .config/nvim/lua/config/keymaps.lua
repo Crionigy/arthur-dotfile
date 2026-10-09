@@ -1,14 +1,18 @@
 local map = vim.keymap.set
 
+-- General
+-- map('n', 'K', 'i<CR><Esc>w', { desc = 'Split line' })
+
 -- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
-map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
+local builtin = require('telescope.builtin')
+map("n", "<leader>ff", builtin.find_files, { desc = "telescope find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "telescope live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "telescope find buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "telescope help page" })
+map("n", "<leader>ma", builtin.marks, { desc = "telescope find marks" })
+map("n", "<leader>fo", builtin.oldfiles, { desc = "telescope find oldfiles" })
+map("n", "<leader>fz", builtin.current_buffer_fuzzy_find, { desc = "telescope find in current buffer" })
+map("n", "<leader>gt", builtin.git_status, { desc = "telescope git status" })
 
 -- Open neovim config files
 map("n", "<leader>fn", function()
@@ -31,7 +35,9 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 -- Moving arround tabs
 map("n", "<A-k>", "gt", { desc = "switch next tab" })
+map("n", "<Tab>", "gt", { desc = "switch next tab" })
 map("n", "<A-j>", "gT", { desc = "switch previous tab" })
+map("n", "<S-Tab>", "gT", { desc = "switch previous tab" })
 
 -- Clear highlights
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })

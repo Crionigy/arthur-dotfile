@@ -5,20 +5,29 @@ return {
         opts = {
             servers = {
                 lua_ls = require('config.lsp.lua_ls'),
-                ccls = {},
-                -- html = {},
-                pylsp = {},
+                -- ccls = {},
+                html = {
+                    filetypes = { "html", "htmlangular", "razor" },
+                },
+                -- pylsp = {},
                 cssls = {},
-                angularls = require('config.lsp.angularls'),
+                angularls = {},
                 ts_ls = {},
-                zls = {},
+                eslint={},
+                -- zls = {},
                 csharp_ls = {},
-                hyprls = {},
+                -- hyprls = {},
+                emmet_language_server = {},
             },
         },
         config = function(_, opts)
             for server, config in pairs(opts.servers) do
                 config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+
+                if server == "html" then
+                    config.capabilities.textDocument.completion.completionItem.snippetSupport = true
+                end
+
                 vim.lsp.config(server, config)
                 vim.lsp.enable(server)
             end

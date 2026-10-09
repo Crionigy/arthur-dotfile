@@ -8,6 +8,10 @@ create_cmd("TextYankPost", {
     end,
 })
 
-create_cmd("LspAttach", require("config.lsp.on_attach"))
+create_cmd('FileType', {
+    desc = "Enable treesitter for supported filetypes",
+    pattern = { 'typescript', 'javascript', 'html', 'htmlangular', 'css', 'scss', 'json', 'cs', 'lua' },
+    callback = function() vim.treesitter.start() end,
+})
 
-
+create_cmd('LspAttach', require('config.lsp.on_attach'))

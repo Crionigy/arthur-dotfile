@@ -22,10 +22,10 @@ return {
                 header = vim.split(logo, "\n"),
                 center = {
                     {
-                        action = "Telescope find_files",
+                        -- action = "Telescope find_files",
                         desc = " Find File",
                         icon = " ",
-                        key = "f",
+                        key = "ff",
                     },
                     {
                         action = "ene | startinsert",
@@ -34,22 +34,22 @@ return {
                         key = "n",
                     },
                     {
-                        action = "Telescope oldfiles",
+                        -- action = "Telescope oldfiles",
                         desc = " Recent Files",
                         icon = " ",
-                        key = "r",
+                        key = "fo",
                     },
                     {
-                        action = "Telescope live_grep",
+                        -- action = "Telescope live_grep",
                         desc = " Find Text",
                         icon = " ",
-                        key = "g",
+                        key = "fg",
                     },
                     {
                         action = "Telescope help_tags",
                         desc = " Config",
                         icon = " ",
-                        key = "c",
+                        key = "fn",
                     },
                     {
                         action = "Lazy",

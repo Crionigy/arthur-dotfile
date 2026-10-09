@@ -6,7 +6,7 @@ return {
             "brenoprata10/nvim-highlight-colors",
         },
 
-        version = "v1.*",
+        version = "1.*",
 
         opts = {
             sources = {

@@ -1,7 +1,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
+        -- tag = "v0.2.1",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-live-grep-args.nvim",
@@ -33,7 +33,7 @@ return {
                     },
                     extensions = {
                         fzf = {
-                            fuzzy = true,                    
+                            fuzzy = true,
                             override_generic_sorter = true,
                             override_file_sorter = true, 
                             case_mode = "smart_case",
@@ -41,7 +41,19 @@ return {
                         live_grep_args = { auto_quoting = true },
                     },
                     file_ignore_patterns = {
-                        "assets",
+                        "%.png",
+                        "%.svg",
+                        "%.ttf",
+                        "%.docx",
+                        "%.pdf",
+                        "%.gif",
+                        "%.jpg",
+                        "%.jpeg",
+                        "%.webm",
+                        "%.bpm",
+                        "%.woff",
+                        "%.woff2",
+                        "%.xlsx",
                     },
                 },
             })
