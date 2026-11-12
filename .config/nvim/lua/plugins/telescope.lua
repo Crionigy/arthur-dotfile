@@ -54,6 +54,11 @@ return {
                         "%.woff",
                         "%.woff2",
                         "%.xlsx",
+                        "%.map",
+                        "%.min.js$",
+                        "%.min.css$",
+                        "node_modules",
+                        ".git/"
                     },
                 },
             })
